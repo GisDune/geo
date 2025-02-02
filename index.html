@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('10.jpg') no-repeat center center/cover;
+            flex-direction: column;
+        }
+        .container {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        p {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e68900;
+        }
+        .cv-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            overflow-y: auto;
+            padding-bottom: 20px;
+        }
+        .cv-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .cv-container .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .cv-container .cv-text {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cv-container a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+        .cv-container a:hover {
+            text-decoration: underline;
+        }
+        /* زر الإخفاء أعلى يسار الصورة */
+        .hide-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(24, 20, 20, 0.285);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .hide-btn:hover {
+            background: rgb(71, 57, 57);
+        }
+        @media screen and (max-width: 760px) {
+
+
+    .container {
+        width: 35%;
+        
+        padding: 10px;
+        text-align: center; /* توسيط النصوص */
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        margin: 5px auto;
+        display: block;
+    }
+
+    .cv-container {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+    }
+
+    .cv-container img {
+        width: 100%;
+        margin-right: 4px;
+        display: block;
+    }
+
+    .cv-text {
+        width: 90%;
+        font-size: 0.9em;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .hide-btn {
+        font-size: 16px;
+        padding:  10px;
+        transform: translateX(270px) translateY(-20%);
+        border-radius: 10px 80px;
+        
+    
+    }
+
+    .undo-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <h1>Geo_Khaled_Tarek</h1>
+        <p>متخصص في نظم المعلومات الجغرافية<br>والاستشعار عن بعد</p>
+        <button onclick="showCV()">عرض السيرة الذاتية</button>
+    </div>
+
+    <div class="cv-container" id="cvContainer">
+        <!-- زر الإخفاء في أعلى يسار الصورة -->
+        <button class="hide-btn" onclick="hideCV()">&#x1F448 undo</button>
+
+        <img src="cv.jpg" alt="السيرة الذاتية">
+        <div class="cv-text">
+            <p>Graduation Project. Participated in a team to complete the project:
+            "Studying the movement and development of sand dunes on Al Salam Canal using geographic information systems, remote sensing, and artificial intelligence."</p>
+
+            <p>Links to GIS Diploma Graduation Project (2025):</p>
+            
+            <p>
+                <a href="https://drive.google.com/drive/folders/1pq_G96_jzjCAOj5bRIgWtYjfjMzzAx9a" target="_blank">Book Link</a>
+            </p>
+
+            <p>
+                <a href="https://drive.google.com/drive/folders/IN-Wvi5pwFSIVE7dPjLOtbFfE405onr" target="_blank">Maps and Outputs Link</a>
+            </p>
+
+            <p>
+                <a href="https://gisdune.github.io/DunePredict/index.html" target="_blank">Frontend Interface for the Web Application</a>
+            <br/> <p dir="rtl" style="white-space: normal; word-spacing: 8px; line-height: 30px; font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                انظر إلي بعض التفاصيل&#x1F447;<br/><br/><br/>فريق العمل في المشروع السابق ذكره قاموا بإستخدام أساليب و تقنيات حديثة ومتطورة لرصد التغير في حركة الكثبان الرملية والتعرف علي ديناميكية الحركة من خلال تحليلات إحصائية          ببرنامج Arc_Pro وايضا تحليلات البيانات النقطية الراستر بإستخدام ال Multidimensional_Raster  ونمذجة الاتجاه بإستخدام Generat_Trend و نمذجة التنبؤ المستقبلي للمناطق الاكثر عرضة لزحف الكثبان الرملية بإستخدام 
+                ال  Predict_Using_By_Generat_Trend و إستخدام المؤشرات الطيفية والفلترة المكانية والتصنيف الموجه وتحليل المركبات الاساسية PCA للتعرف علي الكثبان وتحديد الشكل الهندسي لها وتم تطوير خوارزمية الانحدار اللوجستي بلغة البايثون ومكتبات الذكاء الاصطناعي للتنبؤ بالاتجاه المستقبلي للكثبان ومن خلال معرفة الاتجاه المستقبلي بناء علي عدة معايير بيئية تم تحديدها في اكواد     الباك اند ثم معرفة المكان المحتمل ان تنتقل إليه الكثبان بالاعتماد علي الاتجاه الذي تنبأ به نموذج الانحدار اللوجستي وسرعة الرياح وزمن نشاط الرياح وإحداثيات مناطق الكثبان السابقة وبالتالي يمكن التنبؤ بالمناطق المستقبلية لزحف الكثبان كما تم استخدام بيانات متنوعة من Landsat_5_8_9 و Sentinel_2 و Aster  وتمت المعالجة بإستخدام برامج ENVI , Snap_Sentinel  وتم استخدام     النمذجة الرقمية للتنبؤ بسرعة الرياح والرطوبة  و إستخدام النمذجة الرقمية تحليل الاسطح والهيدرولوجي
+                
+            </p>
+            </p>
+        </div>
+    </div>
+
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.querySelector('.hide-btn');
+
+    // تغيير النص بناءً على حجم النافذة عند تحميل الصفحة لأول مرة
+    updateButtonText();
+
+    // تحديث النص عند تغيير حجم النافذة
+    window.addEventListener('resize', updateButtonText);
+
+    function updateButtonText() {
+        if (window.innerWidth <= 760) {
+            btn.innerHTML = 'Undo &#x1F449 '; // السهم يشير لليسار
+        } else {
+            btn.innerHTML = '&#x1F448 undo'; // السهم يشير لليمين
+        }
+    }
+});
+
+
+        function showCV() {
+            document.getElementById('cvContainer').style.display = 'flex';
+            document.getElementById('mainContainer').style.display = 'none'; // إخفاء المحتوى الأساسي
+            document.body.style.background = "url('10.jpg') no-repeat center center/cover"; // تغيير الخلفية
+        }
+        
+        function hideCV() {
+            document.getElementById('cvContainer').style.display = 'none';
+            document.getElementById('mainContainer').style.display = 'flex'; // إظهار المحتوى الأساسي
+            document.body.style.background = "url('10.jpg') no-repeat center center/cover"; // الإبقاء على الخلفية
+        }
+    </script>
+</body>
+</html>
