@@ -109,25 +109,30 @@
         }
         @media screen and (max-width: 760px) {
 
-
+            body {
+                
+                background-size: 100% 98vh; /* تقليل حجم الصورة إلى 80% مع الحفاظ على النسبة */
+                background-color:rgba(45, 53, 43, 0.97) ;
+}
     .container {
         width: 35%;
+        
         padding: 10px;
         text-align: center; /* توسيط النصوص */
     }
 
     h1 {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     p {
-        font-size: 0.8em;
+        font-size: 0.9em;
         line-height: 1.4;
     }
 
     button {
         font-size: 0.9em;
-        padding: 10px ;
+        padding: 10px 15px;
         margin: 5px auto;
         display: block;
     }
@@ -233,17 +238,18 @@
 });
 
 
-        function showCV() {
-            document.getElementById('cvContainer').style.display = 'flex';
-            document.getElementById('mainContainer').style.display = 'none'; // إخفاء المحتوى الأساسي
-            document.body.style.background = "url('10.jpg') no-repeat center center/cover"; // تغيير الخلفية
-        }
+
+function showCV() {
+        document.getElementById('cvContainer').style.display = 'flex';
+        document.getElementById('mainContainer').style.display = 'none'; // إخفاء المحتوى الأساسي
+        // الخلفية لن تتغير، سنعتمد على media queries لتغيير الخلفية
+    }
         
-        function hideCV() {
-            document.getElementById('cvContainer').style.display = 'none';
-            document.getElementById('mainContainer').style.display = 'flex'; // إظهار المحتوى الأساسي
-            document.body.style.background = "url('10.jpg') no-repeat center center/cover"; // الإبقاء على الخلفية
-        }
+    function hideCV() {
+        document.getElementById('cvContainer').style.display = 'none';
+        document.getElementById('mainContainer').style.display = 'flex'; // إظهار المحتوى الأساسي
+        // لا تغيير في الخلفية هنا، سيتم التعامل مع تغيير الخلفية عبر media queries
+    }
     </script>
 </body>
 </html>
